@@ -1,0 +1,112 @@
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کنترل محیط</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #8EC5FC, #E0C3FC);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            direction: rtl;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .connect-button {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .connect-button.connected {
+            background-color: green;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            justify-items: center;
+        }
+        .button-grid button {
+            background: linear-gradient(to bottom, #333, #000);
+            color: black;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 80px;
+            height: 80px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button-grid button.on {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">کنترل محیط</div>
+    <button class="connect-button" onclick="toggleConnect(this)">Connect</button>
+    <div class="button-grid">
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+        <button onclick="toggleButton(this)">OFF</button>
+    </div>
+
+    <script>
+        function toggleConnect(button) {
+            if (button.textContent === 'Connect') {
+                button.textContent = 'Connected';
+                button.classList.add('connected');
+                navigator.vibrate(500); // Heavy vibration
+            } else {
+                button.textContent = 'Connect';
+                button.classList.remove('connected');
+                navigator.vibrate(500); // Heavy vibration
+            }
+        }
+
+        function toggleButton(button) {
+            if (button.textContent === 'OFF') {
+                button.textContent = 'ON';
+                button.classList.add('on');
+                navigator.vibrate(100); // Light vibration
+            } else {
+                button.textContent = 'OFF';
+                button.classList.remove('on');
+                navigator.vibrate(100); // Light vibration
+            }
+        }
+    </script>
+</body>
+</html>
